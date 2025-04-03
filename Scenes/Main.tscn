@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://blk76tp70jryw"]
+
+[ext_resource type="Script" uid="uid://0cjlwi8m1ph2" path="res://Scripts/Main.gd" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://bprqibddj7jxj" path="res://Scenes/Celestial.tscn" id="1_r150o"]
+[ext_resource type="FontFile" uid="uid://uaulofyq6v67" path="res://Assets/BebasNeue-Regular.ttf" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://0v6xin6gvhsy" path="res://Scenes/Recorder.tscn" id="4_rgh2o"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_idj7w")
+
+[node name="CelestialBodies" type="Node2D" parent="."]
+
+[node name="Celestial" parent="CelestialBodies" instance=ExtResource("1_r150o")]
+position = Vector2(270.5, 128)
+radius = 0.05
+
+[node name="Celestial2" parent="CelestialBodies" instance=ExtResource("1_r150o")]
+position = Vector2(64, 128)
+radius = 0.05
+color = Color(0, 1, 0, 1)
+
+[node name="Celestial3" parent="CelestialBodies" instance=ExtResource("1_r150o")]
+position = Vector2(168, 48)
+radius = 0.05
+color = Color(1, 0, 0, 1)
+
+[node name="Text" type="Label" parent="."]
+offset_top = 75.0
+offset_right = 320.0
+offset_bottom = 255.0
+theme_override_fonts/font = ExtResource("3_kln2b")
+text = "Mohamed Ali Salim"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Recorder" parent="." instance=ExtResource("4_rgh2o")]

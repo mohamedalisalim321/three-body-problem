@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bprqibddj7jxj"]
+
+[ext_resource type="Script" uid="uid://canix7xta4v6b" path="res://Scripts/Celestial.gd" id="1_h5kn1"]
+[ext_resource type="Texture2D" uid="uid://vfqbxsktchv" path="res://Assets/chestial body.svg" id="2_mdcjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5kn1"]
+radius = 1.0
+
+[node name="Celestial" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_h5kn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h5kn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mdcjt")
+
+[node name="Line2D" type="Line2D" parent="."]
+top_level = true
+width = 2.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
